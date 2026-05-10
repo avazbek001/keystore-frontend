@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { CardContext } from '../context/CardContext';
+import { StoreProvider } from './context/StoreContext.jsx'
 
 const Products = ({ isDark }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();
   const category = searchParams.get('category');
-  const { addToCart } = useContext(CardContext);
+  const { addToCart } = useContext(StoreContext);
 
   useEffect(() => {
     setLoading(true);

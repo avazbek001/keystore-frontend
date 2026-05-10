@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CardContext } from '../context/CardContext';
+import { StoreProvider } from './context/StoreContext.jsx'
 
 const Cart = ({ isDark }) => {
   const { cartItems, cartTotal, removeFromCart, updateCartQuantity, clearCart } = useContext(CardContext);

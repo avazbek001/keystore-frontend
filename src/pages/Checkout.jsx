@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CardContext } from '../context/CardContext';
+import { StoreProvider } from './context/StoreContext.jsx'
 import { useAuth } from '../context/AuthContext';
 
 const Checkout = ({ isDark }) => {
-  const { cartItems, cartTotal, clearCart } = useContext(CardContext);
+  const { cartItems, cartTotal, clearCart } = useContext(StoreContext);
   const { user, token } = useAuth();
   const navigate = useNavigate();
   const [address, setAddress] = useState('');

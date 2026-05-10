@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { CardContext } from '../context/CardContext';
+import { StoreProvider } from './context/StoreContext.jsx'
 
 const Saved = ({ isDark }) => {
-  const context = useContext(CardContext);
+  const context = useContext(StoreContext);
   
   if (!context) return <div className="p-10 text-center">Loading...</div>;
   

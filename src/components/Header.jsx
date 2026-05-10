@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CardContext } from '../context/CardContext';
+import { StoreProvider } from './context/StoreContext.jsx'
 import { useAuth } from '../context/AuthContext';
 
 const Header = ({ isDark, setIsDark }) => {
-  const { searchTerm, setSearchTerm, clearSearch, cartCount } = useContext(CardContext);
+  const { searchTerm, setSearchTerm, clearSearch, cartCount } = useContext(StoreContext);
   const { user, logout } = useAuth();
   const [localSearch, setLocalSearch] = useState(searchTerm);
   const navigate = useNavigate();

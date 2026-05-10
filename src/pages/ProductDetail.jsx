@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { CardContext } from '../context/CardContext';
+import { StoreProvider } from './context/StoreContext.jsx'
 
 const ProductDetail = ({ isDark }) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToCart } = useContext(CardContext);
+  const { addToCart } = useContext(StoreContext);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
