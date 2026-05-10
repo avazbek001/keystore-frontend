@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { StoreProvider } from './context/StoreContext.jsx'
+import { StoreContext } from "../context/StoreContext";
 
 const Products = ({ isDark }) => {
   const [products, setProducts] = useState([]);

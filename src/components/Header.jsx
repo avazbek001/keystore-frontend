@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { StoreProvider } from './context/StoreContext.jsx'
+import { StoreContext } from "../context/StoreContext";
 import { useAuth } from '../context/AuthContext';
 
 const Header = ({ isDark, setIsDark }) => {

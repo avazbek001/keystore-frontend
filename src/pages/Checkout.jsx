@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { StoreProvider } from './context/StoreContext.jsx'
+import { StoreContext } from "../context/StoreContext";
 import { useAuth } from '../context/AuthContext';
 
 const Checkout = ({ isDark }) => {

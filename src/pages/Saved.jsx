@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { StoreProvider } from './context/StoreContext.jsx'
-
+import { StoreContext } from "../context/StoreContext";
 const Saved = ({ isDark }) => {
   const context = useContext(StoreContext);
   
