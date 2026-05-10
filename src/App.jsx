@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CardProvider } from './context/CardContext';
+import { StoreProvider } from './context/StoreContext';  // StoreProvider
 import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -14,14 +14,14 @@ import Profile from './pages/Profile';
 import Settings from './pages/Setting'; 
 import Login from './pages/Login';
 import Register from './pages/Register';
-import NotFound from './pages/NotFound';  // Yangi 404 sahifasi
+import NotFound from './pages/NotFound';
 
 function App() {
   const [isDark, setIsDark] = useState(true);
 
   return (
     <AuthProvider>
-      <CardProvider>
+      <StoreProvider>  {/* StoreProvider */}
         <BrowserRouter>
           <div className={`flex min-h-screen transition-colors duration-300 ${isDark ? 'bg-[#0A0A0F] text-white' : 'bg-gray-100 text-black'}`}>
             <Sidebar isDark={isDark} />
@@ -45,7 +45,7 @@ function App() {
             </div>
           </div>
         </BrowserRouter>
-      </CardProvider>
+      </StoreProvider>
     </AuthProvider>
   );
 }
