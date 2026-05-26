@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: #0A0A0F;
+  color: white;
+}
 
+a {
+  color: #6C5DD3;
+  text-decoration: none;
+}
 
 /* Animatsiyalar */
 @keyframes gradient-x {
