@@ -6,27 +6,38 @@ const Home = ({ isDark }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://keystore-backend.asadbekhamroqulov55.workers.dev/api/products')
       .then(res => res.json())
       .then(data => {
-        setProducts(data.slice(0, 8));
+        setProducts(data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(err => {
+        console.error('API xatosi:', err);
+        setLoading(false);
+      });
   }, []);
+
+  const categories = [
+    { name: 'Klaviatura', icon: '🎹', count: 12 },
+    { name: 'Mishka', icon: '🖱️', count: 8 },
+    { name: 'Quloqchin', icon: '🎧', count: 10 },
+    { name: 'Gaming stul', icon: '🪑', count: 6 },
+    { name: 'Monitor', icon: '🖥️', count: 15 },
+    { name: 'Kompyuter', icon: '⚡', count: 5 },
+  ];
 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[60vh]">
-        <div className="w-10 h-10 border-3 border-[#6C5DD3] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-10 h-10 border-4 border-[#6C5DD3] border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
     <div className="p-6 space-y-10">
-      
-      {/* Banner - Faqat shu qoldi, kategoriyalar yo'q */}
+      {/* Banner */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#6C5DD3] to-[#BC78EC] p-8 md:p-12 min-h-[280px] flex items-center">
         <div className="relative z-10 max-w-2xl">
           <div className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs mb-4">
@@ -49,17 +60,34 @@ const Home = ({ isDark }) => {
         <div className="absolute -bottom-10 -left-10 w-40 h-40 md:w-64 md:h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      {/* Mahsulotlar */}
+      {/* Kategoriyalar */}
       <div>
-        <div className="flex justify-between items-center mb-5">
-          <h2 className="text-xl md:text-2xl font-black italic">🔥 Eng ko'p sotilganlar</h2>
+        <h2 className="text-2xl font-black italic mb-6">Kategoriyalar</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {categories.map((cat, idx) => (
+            <Link 
+              key={idx} 
+              to={`/products?category=${encodeURIComponent(cat.name)}`}
+              className={`${isDark ? 'bg-[#1B1B30]' : 'bg-white'} p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300`}
+            >
+              <div className="text-4xl mb-3">{cat.icon}</div>
+              <h3 className="font-bold text-sm">{cat.name}</h3>
+              <p className="text-xs opacity-50 mt-1">{cat.count} ta mahsulot</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Eng ko'p sotilganlar */}
+      <div>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-black italic">🔥 Eng ko'p sotilganlar</h2>
           <Link to="/products" className="text-[#6C5DD3] text-sm hover:underline">
             Hammasini ko'rish →
           </Link>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {products.map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.slice(0, 4).map((product) => (
             <Link
               key={product.id}
               to={`/product/${product.id}`}

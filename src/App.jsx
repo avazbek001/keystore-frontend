@@ -15,6 +15,7 @@ import Settings from './pages/Setting';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
+const API_URL = import.meta.env.VITE_API_URL || 'https://keystore-backend.asadbekhamroqulov55.workers.dev/api';
 
 function App() {
   const [isDark, setIsDark] = useState(true);
