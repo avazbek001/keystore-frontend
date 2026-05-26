@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
-
+// Yangi (to‘g‘ri):
+const API_URL = 'https://keystore-backend.asadbekhamroqulov55.workers.dev/api';
 export const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
