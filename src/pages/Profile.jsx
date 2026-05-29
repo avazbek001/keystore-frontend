@@ -16,7 +16,7 @@ const Profile = ({ isDark }) => {
     }
     
     // TOKEN BILAN SO'ROV YUBORISH
-    fetch(`${import.meta.env.VITE_API_URL}/api/me', {
+    fetch(`${import.meta.env.VITE_API_URL}/api/me`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
