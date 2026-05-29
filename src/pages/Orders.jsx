@@ -13,7 +13,7 @@ const Orders = ({ isDark }) => {
       return;
     }
     
-    fetch('${import.meta.env.VITE_API_URL}/api/orders', {
+    fetch(`${import.meta.env.VITE_API_URL}/api/orders', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -131,3 +131,5 @@ const Orders = ({ isDark }) => {
 };
 
 export default Orders;
+
+

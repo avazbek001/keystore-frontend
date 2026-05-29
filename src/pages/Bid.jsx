@@ -59,3 +59,5 @@ const Bids = ({ isDark }) => {
   );
 };
 export default Bids;
+
+

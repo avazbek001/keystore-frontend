@@ -18,3 +18,5 @@ const NotFound = ({ isDark }) => {
 };
 
 export default NotFound;
+
+

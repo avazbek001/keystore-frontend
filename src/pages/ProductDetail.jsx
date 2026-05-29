@@ -86,3 +86,5 @@ const ProductDetail = ({ isDark }) => {
 };
 
 export default ProductDetail;
+
+

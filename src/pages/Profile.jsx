@@ -16,7 +16,7 @@ const Profile = ({ isDark }) => {
     }
     
     // TOKEN BILAN SO'ROV YUBORISH
-    fetch('${import.meta.env.VITE_API_URL}/api/me', {
+    fetch(`${import.meta.env.VITE_API_URL}/api/me', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -41,7 +41,7 @@ const Profile = ({ isDark }) => {
 
   const handleSave = async () => {
     try {
-      const res = await fetch('${import.meta.env.VITE_API_URL}/api/profile', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -173,3 +173,5 @@ const Profile = ({ isDark }) => {
 };
 
 export default Profile;
+
+

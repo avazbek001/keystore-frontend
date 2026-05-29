@@ -31,3 +31,5 @@ const NFTCard = ({ item, isDark }) => {
 };
 
 export default NFTCard;
+
+
