@@ -6,7 +6,7 @@ const Home = ({ isDark }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://keystore-backend.asadbekhamroqulov55.workers.dev/api/products')
+    fetch('${import.meta.env.VITE_API_URL}/api/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -49,8 +49,8 @@ const Home = ({ isDark }) => {
           <p className="mt-3 text-white/80 text-sm md:text-base max-w-md">
             KEYSTORE — O'zbekistonning eng katta gaming aksessuarlari do'koni
           </p>
-          <Link 
-            to="/products" 
+          <Link
+            to="/products"
             className="inline-block mt-6 bg-white text-[#6C5DD3] px-6 md:px-8 py-2 md:py-3 rounded-xl font-bold hover:scale-105 transition"
           >
             Xarid qilish
@@ -65,8 +65,8 @@ const Home = ({ isDark }) => {
         <h2 className="text-2xl font-black italic mb-6">Kategoriyalar</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {categories.map((cat, idx) => (
-            <Link 
-              key={idx} 
+            <Link
+              key={idx}
               to={`/products?category=${encodeURIComponent(cat.name)}`}
               className={`${isDark ? 'bg-[#1B1B30]' : 'bg-white'} p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300`}
             >
@@ -94,10 +94,10 @@ const Home = ({ isDark }) => {
               className={`${isDark ? 'bg-[#1B1B30]' : 'bg-white shadow-md'} p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 group`}
             >
               <div className="overflow-hidden rounded-xl mb-3">
-                <img 
-                  src={product.image || 'https://via.placeholder.com/300'} 
-                  className="w-full h-36 object-cover group-hover:scale-110 transition duration-500" 
-                  alt={product.name} 
+                <img
+                  src={product.image || 'https://via.placeholder.com/300'}
+                  className="w-full h-36 object-cover group-hover:scale-110 transition duration-500"
+                  alt={product.name}
                 />
               </div>
               <h3 className="font-bold text-sm mb-1 line-clamp-1">{product.name}</h3>
@@ -107,7 +107,7 @@ const Home = ({ isDark }) => {
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-lg font-bold text-[#6C5DD3]">{product.price?.toLocaleString()} so'm</span>
-                <button 
+                <button
                   onClick={(e) => { e.preventDefault(); alert('Savatga qo\'shildi!'); }}
                   className="w-7 h-7 rounded-full bg-[#6C5DD3]/20 text-[#6C5DD3] flex items-center justify-center hover:bg-[#6C5DD3] hover:text-white transition text-sm"
                 >

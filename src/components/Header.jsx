@@ -10,7 +10,7 @@ const Header = ({ isDark, setIsDark }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => setSearchTerm(localSearch), 300);
+    const timer = setTimeout(() => setSearchTerm(localSearch), 3000);
     return () => clearTimeout(timer);
   }, [localSearch, setSearchTerm]);
 
