@@ -67,7 +67,7 @@ const Home = ({ isDark }) => {
           {categories.map((cat, idx) => (
             <Link
               key={idx}
-             to={`/products?category=${encodeURIComponent(cat.name)}`}
+             to={"/products?category=" + encodeURIComponent(cat.name)}  
             className={`${isDark ? 'bg-[#1B1B30]' : 'bg-white'} p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300`}
               <div className="text-4xl mb-3">{cat.icon}</div>
               <h3 className="font-bold text-sm">{cat.name}</h3>

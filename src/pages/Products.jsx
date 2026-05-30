@@ -9,7 +9,7 @@ const Products = ({ isDark }) => {
 
   useEffect(() => {
     let url = `${import.meta.env.VITE_API_URL}/api/products';
-    if (category) url += `?category=${encodeURIComponent(category)}`;
+    if (category) url += "?category=" + encodeURIComponent(category);
     
     fetch(url)
       .then(res => res.json())
