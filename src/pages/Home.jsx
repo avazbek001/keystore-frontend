@@ -60,22 +60,7 @@ const Home = ({ isDark }) => {
         <div className="absolute -bottom-10 -left-10 w-40 h-40 md:w-64 md:h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
-      {/* Kategoriyalar */}
-      <div>
-        <h2 className="text-2xl font-black italic mb-6">Kategoriyalar</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categories.map((cat, idx) => (
-            <Link
-              key={idx}
-             to={"/products?category=" + encodeURIComponent(cat.name)}>
-           className={(isDark ? 'bg-[#1B1B30]' : 'bg-white') + ' p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300'}
-              <div className="text-4xl mb-3">{cat.icon}</div>
-              <h3 className="font-bold text-sm">{cat.name}</h3>
-              <p className="text-xs opacity-50 mt-1">{cat.count} ta mahsulot</p>
-            </Link>
-          ))}
-        </div>
-      </div>
+      
 
       {/* Eng ko'p sotilganlar */}
       <div>
