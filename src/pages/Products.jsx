@@ -29,7 +29,7 @@ const Products = ({ isDark }) => {
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {products.map(product => (
-          <Link key={product.id} to={`/product/${product.id}`} className={`${isDark ? 'bg-[#1B1B30]' : 'bg-white shadow-md'} p-4 rounded-2xl hover:-translate-y-2 transition`}>
+         <Link key={product.id} to={"/product/" + product.id} className={(isDark ? 'bg-[#1B1B30]' : 'bg-white shadow-md') + ' p-4 rounded-2xl hover:-translate-y-2 transition'}>
             <img src={product.image} className="w-full h-40 object-cover rounded-xl mb-3" />
             <h3 className="font-bold text-base">{product.name}</h3>
             <p className="text-xl font-bold text-[#6C5DD3] mt-2">{product.price?.toLocaleString()} so'm</p>
