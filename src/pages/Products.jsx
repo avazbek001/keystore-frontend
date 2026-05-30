@@ -8,7 +8,7 @@ const Products = ({ isDark }) => {
   const category = searchParams.get('category');
 
   useEffect(() => {
-    let url = `${import.meta.env.VITE_API_URL}/api/products';
+   let url = `${import.meta.env.VITE_API_URL}/api/products`;
     if (category) url += "?category=" + encodeURIComponent(category);
     
     fetch(url)
@@ -42,5 +42,3 @@ const Products = ({ isDark }) => {
 };
 
 export default Products;
-
-
