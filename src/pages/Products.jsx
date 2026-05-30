@@ -24,7 +24,7 @@ const Products = ({ isDark }) => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-2">{category ? `${category}lar` : 'Barcha mahsulotlar'}</h1>
+      {category ? category + "lar" : 'Barcha mahsulotlar'}
       <p className="text-sm opacity-60 mb-6">{products.length} ta mahsulot topildi</p>
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
